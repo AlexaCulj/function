@@ -1,27 +1,27 @@
-var a = parseInt(prompt("Please enter A"));
-var b = parseInt(prompt("Please enter power B"));
-var c = parseInt(prompt("Please enter power C"));
+var aParameter = parseInt(prompt('Please enter A'), 10);
+var bParameter = parseInt(prompt('Please enter power B'), 10);
+var cParameter = parseInt(prompt('Please enter power C'), 10);
+
 function getDiscriminant(a, b, c) {
-
     return (b * b) - (4 * a * c);
-
 }
-alert(getDiscriminant(a, b, c));
+
+alert(getDiscriminant(aParameter, bParameter, cParameter));
 
 
 function getRoot(a, b, c) {
+    var x1, x2;
 
     if (getDiscriminant(a, b, c) > 0) {
         x1 = (-b + Math.sqrt(getDiscriminant(a, b, c))) / (2 * a);
         x2 = (-b - Math.sqrt(getDiscriminant(a, b, c))) / (2 * a);
-        alert("x1 = " + x1);
-        alert("x2 = " + x2);
+        alert(`x1 = ${x1}`);
+        alert(`x2 = ${x2}`);
     } else if (getDiscriminant(a, b, c) === 0) {
         x1 = (-b) / (2 * a);
-        alert("x = " + x1);
+        alert(`x = ${x1}`);
     } else {
-        alert("Нет действительных корней");
+        alert('Нет действительных корней');
     }
-
 }
-alert(getRoot(a, b, c));
+alert(getRoot(aParameter, bParameter, cParameter));
